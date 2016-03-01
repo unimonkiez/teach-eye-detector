@@ -14,9 +14,17 @@ import android.widget.LinearLayout;
 
 import com.facebook.react.LifecycleState;
 import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.JavaScriptModule;
+import com.facebook.react.bridge.NativeModule;
+import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
+import com.facebook.react.uimanager.ViewManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
 
@@ -34,6 +42,22 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModuleName("index.android")
                 .addPackage(new MainReactPackage())
+                .addPackage(new ReactPackage() {
+                    @Override
+                    public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
+                        List<NativeModule> modules = new ArrayList<>();
+                        modules.add(new ReactNativePackage(reactApplicationContext));
+                        return modules;
+                    }
+                    @Override
+                    public List<Class<? extends JavaScriptModule>> createJSModules() {
+                        return new ArrayList<>();
+                    }
+                    @Override
+                    public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
+                        return new ArrayList<>();
+                    }
+                })
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();

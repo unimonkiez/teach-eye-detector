@@ -1,30 +1,57 @@
-'use strict';
+import React, { Component, NativeModules } from 'react-native';
+import Start from './src/start.js';
+import Quiz from './src/quiz.js';
+import Result from './src/result.js';
 
-var React = require('react-native');
-var {
-  Text,
-  View
-} = React;
 
-class MyAwesomeApp extends React.Component {
+const START = 0;
+const QUIZ = 1;
+const RESULT = 2;
+class MyAwesomeApp extends Component {
+  state = {
+    name: '',
+    results: {},
+    step: START
+  };
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.hello}>Hello, World Yuval</Text>
-      </View>
-    )
+    let component
+    switch (this.state.step) {
+      case START:
+        component = <Start onStart={this.handleStart}/>;
+        break;
+      case QUIZ:
+        component = <Quiz name={this.state.name} onDone={this.handleDone}/>;
+        break;
+      case RESULT:
+        component = <Result name={this.state.name} results={this.state.results} onReset={this.handleReset}/>;
+        break;
+      default:
+        throw `Error, didn't find step ${this.state.step}`;
+    }
+    return component;
   }
+  handleStart = name => {
+    this.setState({
+      name,
+      step: QUIZ
+    }, () => {
+
+      NativeModules.ReactNativePackage.start(this.state.name);
+    });
+  };
+  handleDone = results => {
+    this.setState({
+      results,
+      step: RESULT
+    }, () => {
+      NativeModules.ReactNativePackage.done();
+    });
+  };
+  handleReset = () => {
+    this.setState({
+      step: START
+    });
+  };
 }
-var styles = React.StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  hello: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
 
 React.AppRegistry.registerComponent('MyAwesomeApp', () => MyAwesomeApp);
