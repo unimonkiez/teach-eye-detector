@@ -1,0 +1,15 @@
+{
+    "en_us":{
+        "START_TYPING" : "Start typing something...",
+        "EMPTY_ANSWER" : "Answer is empty"
+    },
+    "fr_fr":{
+        "START_TYPING" : "Start typing something in french...",
+        "EMPTY_ANSWER" : "Answer is empty in french..."
+    },
+    "he_il":{
+        "START_TYPING" : "התחל להקליד כאן...",
+        "EMPTY_ANSWER" : "תשובה ריקה"
+    }
+}
+

@@ -1,0 +1,260 @@
+@import "../core/mixin";
+
+$ratio-settings-navigation: 0.4;
+$size-settings-navigation: $ratio-settings-navigation * 100%;
+$size-max-settings-navigation: 500px;
+$size-shadow-settings-navigation: 15px;
+$size-collapsible-item-padding: 35px;
+$size-settings-button: 44px;
+$size-pin-button: 22px;
+
+.settings {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    &-feedback {
+        @include flexbox;
+        &-wrapper {
+            @include flexbox;
+            @include align-items(center);
+            position: relative;
+            @include flex(1, 1, 1);
+                padding-right: 20px;
+            span {
+                margin-right: 20px;
+            }
+            .feedback-wrong:before {
+                @include taskIcons("\e908");
+                color: #f00;
+            }
+            .feedback-parcially_correct:before {
+                @include taskIcons("\e906");
+                 color: #fcd300;
+            }
+            .feedback-correct:before {
+                @include taskIcons("\e907");
+                 color: #0f0;
+            }
+            .emoji-wysiwyg-editor {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid #9e9e9e;
+                border-radius: 0;
+                outline: none;
+                height: 3rem;
+                width: 100%;
+                font-size: 1rem;
+                margin: 0 0 15px 0;
+                padding: 0;
+                box-shadow: none;
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+                transition: all .3s;
+                line-height: 4rem;
+                &:focus:not([readonly]) {
+                    border-bottom: 1px solid #9C27B0;
+                    box-shadow: 0 1px 0 0 #9C27B0;
+                }
+            }
+            i.emoji-picker-icon {
+                top: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-button {
+        right: 20px;
+        top: 20px;
+        &.btn-floating.btn-large{
+            position: absolute;
+            width: $size-settings-button;
+            height: $size-settings-button;
+            >i {
+                line-height: $size-settings-button;
+                color: black;
+            }
+        }
+    }
+    &-mc-option{
+        margin-bottom: 15px;
+    }
+
+    &-content {
+        position: relative;
+        z-index: 0;
+        @include flex(1, 1, calc(#{100% - $size-settings-navigation} - #{$size-shadow-settings-navigation}));
+        @media only screen and (min-width : #{$size-max-settings-navigation / $ratio-settings-navigation}) {
+            @include flex(1, 1, calc(100% - #{$size-max-settings-navigation + $size-shadow-settings-navigation}));
+        }
+    }
+
+    // -------------------- Start of section BUG
+    // Added max-width to .settings-content when open and pinned to force it not to overflow
+    &.open.pin {
+        .settings-content{
+            max-width: calc(#{100% - $size-settings-navigation} - #{$size-shadow-settings-navigation});
+            @media only screen and (min-width : #{$size-max-settings-navigation / $ratio-settings-navigation}) {
+                max-width: calc(100% - #{$size-max-settings-navigation + $size-shadow-settings-navigation});
+            }
+        }
+    }
+    // -------------------- End of section BUG
+    &-navigation {
+        flex: 0 auto;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        min-height: 100%;
+        max-height: 100%;
+        width: 0;
+        max-width: $size-max-settings-navigation;
+        will-change: width;
+        transform: translate3d(0, 0, 0);
+        transition: 0.3s ease-in-out;
+        transition-property: width;
+        display: flex;
+        flex-wrap: wrap;
+        &-shadow {
+            background-color: white;
+            $size-bolder-shadow: 5px;
+            box-shadow: 0 0 $size-bolder-shadow 0 rgba(0, 0, 0, 0.16), 0 0 #{$size-shadow-settings-navigation - $size-bolder-shadow} 0 rgba(0, 0, 0, 0.12);
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        &-list {
+            overflow-y: auto;
+        }
+        .collapsible {
+            font-family: “opensans”, sans-serif;
+            font-size: 0.8rem;
+            color: #333333;
+            margin: 0;
+            li {
+                margin-bottom: 2px;
+                .collapsible-header {
+                    padding-left: $size-collapsible-item-padding;
+                    line-height: 3.375em;
+                    background-color: #F9F9F9;
+                    font-weight: bold;
+                }
+                .collapsible-body {
+                    padding: 1.875em 0 1.875em $size-collapsible-item-padding;
+                    .settings-section {
+                        [type="checkbox"] + label {
+                                cursor: pointer;
+                                padding-left: 2em;
+                        }
+                        [type="checkbox"] + label:after {
+                            left: 0;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.pin {
+        .settings-content {
+            padding-right: $size-max-settings-navigation + $size-shadow-settings-navigation;
+            padding-right: calc(#{$size-settings-navigation} + #{$size-shadow-settings-navigation});
+            @media only screen and (min-width : #{$size-max-settings-navigation / $ratio-settings-navigation}) {
+                padding-right: calc(#{$size-max-settings-navigation + $size-shadow-settings-navigation});
+            }
+        }
+        .settings-navigation {
+            .settings-navigation-shadow {
+                box-shadow: 0 0 0 1px #ccc;
+            }
+            .settings-pin {
+                transform: rotateZ(0);
+            }
+        }
+    }
+
+    &.open {
+        .settings-button.btn-floating.btn-large {
+            display: none;
+        }
+        .settings-navigation {
+            padding-left: $size-shadow-settings-navigation; // .settings-navigation-shadow shadow size
+            width: 40%;
+        }
+    }
+
+    &-pin.fa {
+        @include user-select(none);
+        padding: (54px - $size-pin-button) / 2; // 54px is the total height of upper settings, where the button is
+        text-align: center;
+        cursor: pointer;
+        font-size: $size-pin-button;
+        width: $size-pin-button;
+        height: $size-pin-button;
+        transform: rotateZ(90deg);
+        transition: 0.1s ease-in-out;
+        transition-property: transform;
+        will-change: transform;
+    }
+    &-feedback-upload {
+        $size-settings-upload-image: 70px;
+        display: flex;
+    &-image {
+        font-size: 1.5em;
+        flex: 0 0 $size-settings-upload-image;
+        img {
+            vertical-align: middle;
+            did-flip: true;
+            height: 38px;
+            width: 38px;
+            -webkit-user-select: none;
+            border-radius: 50%;
+            display: inline-block;
+            border: solid 1px rgba(0, 0, 0, 0.08);
+        }
+    }
+    &-text {
+        flex: 1 1 calc(100% - #{$size-settings-upload-image});
+    }
+    .partial:after {
+        display: inline-block;
+        border: 2px solid black;
+        border-radius: 2px;
+        content: " ";
+        width: 50%;
+        position: absolute;
+        left: 5px;
+        top: 7px;
+        transform: rotateZ(45deg);
+    }
+}
+
+& .schema-select-list {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    .schema-selection{
+      @include flexbox;
+        width: inherit;
+        height: 40px;
+        margin: 0 15px;
+    }
+}
+
+}
+[direction="rtl"]{
+    .settings {
+        .settings-button {
+            right: initial;
+            left: 20px;
+        }
+        .settings-navigation {
+            right: initial;
+            left: 0;
+        }
+    }
+}

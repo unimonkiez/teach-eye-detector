@@ -1,0 +1,20 @@
+{
+    "en_us":{
+        "ADD_ROW": "+ Row",
+        "ADD_COLUMN": "+ Column",
+        "HIDE_TABLE": "Hide table",
+        "HIDE_NUMBERS": "Hide numbers"
+    },
+    "fr_fr":{
+        "ADD_ROW": "ajouter une rangée",
+        "ADD_COLUMN": "ajouter la colonne",
+        "HIDE_TABLE": "table de hide",
+        "HIDE_NUMBERS": "numéros de masquer"
+    },
+    "he_il":{
+        "ADD_ROW": "הוסף שורה",
+        "ADD_COLUMN": "הוסף עמודה",
+        "HIDE_TABLE": "החבא טבלה",
+        "HIDE_NUMBERS": "החבא מספור"
+    }
+}

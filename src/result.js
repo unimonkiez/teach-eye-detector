@@ -1,28 +1,44 @@
 'use strict';
 
-var React = require('react-native');
-var {
+import React, {
+  Component,
+  TouchableNativeFeedback,
+  TextInput,
   Text,
   View
-} = React;
+} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default class MyAwesomeApp extends React.Component {
+export default class Result extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.hello}>Result</Text>
+      <View>
+        <Text>
+          Result
+        </Text>
+        <View style={styles.button}>
+          <Icon.Button name="retweet" backgroundColor="#3b5998" onPress={this._onSubmit}>
+            <Text style={styles.buttonText}>
+              AGAIN
+            </Text>
+          </Icon.Button>
+        </View>
       </View>
     )
   }
+  _onSubmit = () => {
+    this.props.onReset();
+  };
 }
 var styles = React.StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
+  button: {
+    margin: 20
   },
-  hello: {
-    fontSize: 20,
+  buttonText: {
+    color: '#EAF5FD',
     textAlign: 'center',
-    margin: 10,
-  },
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 10
+  }
 });

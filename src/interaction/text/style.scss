@@ -1,0 +1,49 @@
+.text-component {
+  &.text-play-question {
+    margin-bottom: 3em;
+  }
+  position: relative;
+  word-wrap: break-word;
+
+  //override css from materialize
+  strong {
+    font-weight: bold;
+  }
+  //override css from materialize
+  ol {
+    list-style-type: decimal;
+    li {
+      list-style-type: inherit;
+    }
+  }
+  //override css from materialize
+  ul {
+    list-style-type: disc;
+    li {
+      list-style-type: inherit;
+    }
+    ul {
+      list-style-type: circle;
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+
+  .msg {
+    position: absolute;
+    bottom: -17px;
+    left: 14px;
+    font-size: 13px;
+    &.error {
+      color: red;
+    }
+    &.warning {
+      color: orange;
+    }
+  }
+
+  .fr-view {
+    line-height: 140% !important;
+  }
+}

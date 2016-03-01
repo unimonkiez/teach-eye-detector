@@ -1,0 +1,126 @@
+@import '../component/style';
+@import '../font/style';
+@import '~jquery-ui/themes/base/jquery-ui.css';
+@import '../core/emoji/lib/css/emoji.css';
+
+.ttk-task {
+  @import '../interaction/style';
+
+  @import 'settings.panel';
+  @import '../core/mixin';
+  $toast-height: 48px !default;
+  $toast-color: #323232 !default;
+  $toast-text-color: #fff !default;
+  [tabindex="1"] {
+    outline: 0 solid;
+  }
+
+  .ttk-task-container {
+    @include flexbox;
+    flex-direction: column;
+    padding: 40px 32px 0;
+  }
+  .ttk-task-editor {
+    .task-feedback {
+      display: none;
+    }
+  }
+  .ttk-task-player {
+    .options-manager {}
+    .feadback-wrapper {
+      border-top: 1px solid #d5d5d5;
+      .feadback-image {
+        width: 40px;
+        margin: 0 17px;
+      }
+    }
+    .progress-bar {
+      @include flexbox;
+      @include justify-content(flex-end);
+      position: relative;
+      padding: 10px;
+      height: 60px;
+      border-top: 1px solid #d5d5d5;
+      .progress-btn {
+        @include box;
+        @include box-center;
+        cursor: pointer;
+        font-family: Open Sans;
+        text-transform: initial;
+        height: 36px;
+        padding: 0;
+        &.show-answer {
+          width: 141px;
+          margin-right: 24px;
+        }
+        &.my-answer {
+          color: #FFFFFF;
+          width: 141px;
+          margin-right: 24px;
+        }
+        &.reset-all {
+          color: #FFFFFF;
+          width: 90px;
+          margin-right: 24px;
+        }
+      }
+      .attempts {
+        margin: 0 5px;
+        font-size: 14px;
+      }
+      .toaster {
+        &.hide {
+          display: none;
+        }
+        @include flexbox;
+        @include flex-direction(column);
+        @extend .z-depth-1;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-top: 5px solid;
+        box-shadow: 1px 1px 3px 1px #888888;
+        top: -70px;
+        width: auto;
+        clear: both;
+        margin-top: 10px;
+        max-width: calc(100% - 100px);
+        background-color: #ffffff;
+        position: absolute;
+        right: 100px;
+        min-height: 49px;
+        max-height: 120px;
+        margin: 7px;
+        padding-bottom: 6px;
+        &.rounded {
+          border-radius: 24px;
+        }
+        &.wrong {
+          color: #FF0000;
+        }
+        &.correct {
+          color: #00CC00;
+        }
+        &.partial {
+          color: #FFCC00;
+        }
+        .close-toast {
+          @include flexbox;
+          @include justify-content(flex-end);
+          cursor: pointer;
+          color: black;
+          margin-top: 3px;
+          font-size: 14px;
+          padding: 0 10px;
+        }
+        .toast-text {
+          @include flexbox;
+          @include align-items(center);
+          padding: 0 32px;
+          font-family: Open Sans;
+          margin-top: 5px;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+}

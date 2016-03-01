@@ -1,0 +1,67 @@
+.text-component {
+  font-family: $font-family;
+  //font-size: 1em;
+  //color: #444;
+
+  // froala-cusom-theme # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  .custom-theme .fr-command.fr-btn + .fr-dropdown-menu .fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list li a.fr-active,
+  .custom-theme .fr-command.fr-btn + .fr-dropdown-menu .fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list li a:hover,
+  .custom-theme.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active:hover,
+  .custom-theme.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active:hover,
+  .custom-theme.fr-toolbar .fr-command.fr-btn.fr-dropdown.fr-active:focus,
+  .custom-theme.fr-popup .fr-command.fr-btn.fr-dropdown.fr-active:focus,
+  .custom-theme.fr-toolbar button.fr-command.fr-btn:hover,
+  .custom-theme.fr-toolbar button.fr-command.fr-btn.fr-active.fr-dropdown,
+  .custom-theme.fr-toolbar .fr-popup button.fr-p-bttn.f-unlink:hover,
+  .custom-theme.fr-toolbar .fr-popup.fr-link-popup div.f-popup-line ul li:hover,
+  .custom-theme.fr-toolbar.ie8 button.fr-bttn:hover,
+  .custom-theme.fr-toolbar.ie8 button.fr-trigger:hover,
+  .custom-theme.fr-toolbar .bttn-wrapper:not(.touch) button.fr-bttn:hover,
+  .custom-theme.fr-toolbar .bttn-wrapper:not(.touch) button.fr-trigger:hover,
+  .custom-theme.fr-toolbar .fr-trigger.active,
+  .custom-theme.fr-toolbar .fr-dropdown .fr-dropdown-menu.fr-table > li:hover > a,
+  .custom-theme.fr-toolbar .fr-dropdown .fr-dropdown-menu.fr-table > li.hover > a {
+    background: $primary-color !important;
+  }
+  .custom-theme.fr-toolbar button.fr-command.fr-btn.fr-active {
+    color: $primary-color;
+  }
+
+  .custom-theme.fr-toolbar .fr-dropdown .fr-dropdown-menu li.active a,
+  .custom-theme.fr-toolbar .fr-dropdown .fr-dropdown-menu li a:hover {
+    background: $primary-color !important;
+  }
+  .custom-theme .fr-command.fr-btn.fr-dropdown.fr-active + .fr-dropdown-menu .fr-dropdown-wrapper,
+  .custom-theme.fr-modal .f-modal-wrapper,
+  .custom-theme.fr-toolbar .fr-popup.fr-link-popup div.f-popup-line ul,
+  .custom-theme.fr-toolbar .fr-dropdown .fr-dropdown-menu,
+  .custom-theme.fr-toolbar .fr-dropdown .fr-dropdown-menu.fr-table > li > div,
+  .custom-theme.fr-toolbar .fr-dropdown .fr-dropdown-menu.fr-table > li > ul,
+  .custom-theme.fr-box .fr-element span.f-video-editor.active:after {
+    border-color: $primary-color;
+  }
+  .custom-theme.fr-toolbar .fr-popup div.f-popup-line input[type="text"]:focus {
+    border-bottom-color: $primary-color;
+  }
+  .custom-theme.fr-box.focus .fr-wrapper {
+    border-bottom-color: $primary-color;
+    box-shadow: 0 1px 0 0 $primary-color;
+  }
+  .custom-theme.fr-modal .f-modal-wrapper {
+    border-top-color: $primary-color;
+  }
+  .custom-theme.fr-toolbar .fr-popup.fr-link-popup div.f-popup-line ul li + li,
+  .custom-theme.fr-toolbar .fr-dropdown .fr-dropdown-menu.fr-table > hr {
+    border-top-color: $primary-color;
+  }
+  .custom-theme.fr-box .fr-element a,
+  .custom-theme.fr-toolbar .fr-popup h4 i.fa-external-link:hover,
+  .custom-theme.fr-toolbar .fr-dropdown.fr-color-picker .fr-dropdown-menu p a.fr-bttn:hover,
+  .custom-theme.fr-toolbar .fr-bttn.active {
+    color: $primary-color;
+  }
+  .custom-theme.fr-toolbar .fr-dropdown.fr-color-picker .fr-dropdown-menu .fr-color-bttn.active,
+  .custom-theme.fr-toolbar .fr-dropdown.fr-color-picker .fr-dropdown-menu .fr-color-bttn:hover:not(:focus):not(:active) {
+    outline-color: $primary-color;
+  }
+}

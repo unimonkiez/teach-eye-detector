@@ -1,0 +1,53 @@
+@import "~cropper/dist/cropper.css";
+
+.t2k-image-editor {
+  position: relative;
+  background-color: white;
+  border: 1px solid grey;
+  height: 90vh;
+  width: 90vw;
+  margin:10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    text-align: center;
+    height:72px;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  .toolbar {
+    &-upper {
+      text-align:right;
+    }
+
+    &-bottom {
+      text-align: center;
+    }
+  }
+
+  .btn-group {
+    margin-left:20px;
+  }
+
+  button {
+    font-size: 1.1em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn-group {
+    display:inline-block;
+    padding: 8px 0;
+  }
+
+  input[type=radio],
+  input[type=file] {
+    position: fixed;
+    top: -10000px;
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.tmp/
+
+src/core/emoji/
+src/core/jquery.emojiarea.js

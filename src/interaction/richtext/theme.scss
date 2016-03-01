@@ -1,0 +1,17 @@
+.t2k-richtext {
+  &.question-edit {
+    .question-item-wrapper {
+      > .icon-delete_close {
+        background-color: $primary-color;
+      }
+
+      &.focus {
+        .child-wrapper {
+          .image-edit, .video-edit, .audio-edit {
+            border-color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

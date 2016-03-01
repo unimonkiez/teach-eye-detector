@@ -1,0 +1,225 @@
+@import "../core/_mixin";
+
+.t2k-video-component {
+  &.video-edit,
+  &.video-play {
+    .videoWrapper {
+      display: inline-block;
+      position: relative;
+      padding-right: 62px;
+      &.hide {
+        visibility: hidden;
+      }
+      &.iframe-wrapper {
+        height: 0;
+        width: 100%;
+        max-width: 640px;
+        .iframe-padding {
+          position: relative;
+          display: inline-block;
+          padding-top: 25px;
+          padding-bottom: 56.25%;
+          width: 100%;
+        }
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &.loader-wrapper {
+        min-height: 160px;
+        width: 100%;
+        .video-element-wrapper {
+          position: static;
+        }
+      }
+      video {
+        max-width: 100%;
+      }
+      .image-toolbar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 62px;
+        @include flexbox;
+        .image-toolbar-button {
+          height: 30px;
+          width: 30px;
+          @include flexbox;
+          @include justify-content(center);
+          @include align-items(center);
+          background-color: rgba(102, 102, 102, 0.3);
+          color: white;
+          margin-left: 1px;
+          &:hover {
+            background-color: rgba(102, 102, 102, 0.6);
+          }
+        }
+      }
+    }
+  }
+  &.video-edit {
+    margin: 10px;
+    .file-selector-wrapper {
+      position: relative;
+      border: 1px solid #9e9e9e;
+      height: 160px;
+      width: 100%;
+      .input-types {
+        width: 100%;
+        border-bottom: 1px solid #9e9e9e;
+        @include flexbox;
+        @include align-items(flex-end);
+      }
+      ul {
+        @include flexbox;
+        @include flex-direction(row);
+        margin: 0 0 0 6%;
+        line-height: 48px;
+        list-style: none;
+      }
+      li {
+        min-width: 128px;
+        padding: 0 16px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 14px;
+        cursor: pointer;
+        position: relative;
+        margin-left: 20px;
+        color: rgba(51, 51, 51, 0.7);
+        @include user-select(none);
+        @include transition(color .3s ease);
+
+        &.selected {
+          background: none;
+          border-bottom: 2px solid;
+          opacity: 1;
+        }
+      }
+      .dropzone-wrapper {
+        position: absolute;
+        height: 109px;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+      }
+      .link-wrapper {
+        @include flexbox;
+        @include flex-direction(column);
+        @include justify-content(center);
+        padding: 10px;
+        position: absolute;
+        width: calc(100% - 20px);
+        height: 89px;
+        z-index: 1;
+        background-color: #fff;
+        .link-field {
+          flex-grow: 1;
+          padding: 0 20px;
+        }
+        .link-buttons {
+          @include flexbox;
+          align-self: flex-end;
+          @include flex-direction(row);
+          div {
+            // @include Button-flat;
+          }
+        }
+      }
+      .error-wrapper {
+        height: 109px;
+        @include flexbox;
+        @include flex-direction(row);
+        @include align-items(center);
+        @include justify-content(center);
+
+        .icon-error {
+          font-size: 28px;
+          color: #333333;
+        }
+        .icon-oops {
+          font-size: 32px;
+          color: #333333;
+          vertical-align: middle;
+        }
+        .error-message {
+          display: inline-block;
+          margin-left: 1em;
+        }
+        .error-action {
+          text-decoration: underline;
+          margin-left: 0.3em;
+          cursor: pointer;
+        }
+      }
+
+      .loader-wrapper {
+        height: 109px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        z-index: 0;
+
+        .uploading-buttons {
+          justify-self: flex-end;
+        }
+      }
+
+      .edit-wrapper {
+        @include flexbox;
+        @include flex-direction(column);
+        @include justify-content(center);
+        height: 89px;
+        padding: 10px 10px 10px 30px;
+
+        .file-name {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+
+          .change-file {
+            margin-left: 20px;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+
+        .uploading-buttons {
+          @include flexbox;
+          @include justify-content(flex-end);
+        }
+      }
+    }
+
+    video {
+      border: 1px solid #333333;
+    }
+  }
+
+  &.video-play {
+    margin: 10px;
+    width: 100%;
+    max-width: 640px;
+    .video-element-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+    video {
+      border: 1px solid #333333;
+    }
+    .title {
+      font-size: 16px;
+      color: #444444;
+      margin-right: 8px;
+    }
+    .credit {
+      font-size: 13px;
+      color: #666666;
+    }
+  }
+}

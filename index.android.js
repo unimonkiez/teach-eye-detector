@@ -9,15 +9,15 @@ const QUIZ = 1;
 const RESULT = 2;
 class MyAwesomeApp extends Component {
   state = {
-    name: '',
+    name: undefined,
     results: {},
-    step: START
+    step: QUIZ
   };
   render() {
     let component
     switch (this.state.step) {
       case START:
-        component = <Start onStart={this.handleStart}/>;
+        component = <Start name={this.state.name} onStart={this.handleStart}/>;
         break;
       case QUIZ:
         component = <Quiz name={this.state.name} onDone={this.handleDone}/>;
@@ -35,7 +35,6 @@ class MyAwesomeApp extends Component {
       name,
       step: QUIZ
     }, () => {
-
       NativeModules.ReactNativePackage.start(this.state.name);
     });
   };

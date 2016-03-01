@@ -1,0 +1,72 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "env": {
+    "node": true
+  },
+  "ecmaFeatures": {
+    "modules": false
+  },
+  "extends": "airbnb",
+  "plugins": [
+    "sort-class-members"
+  ],
+  "rules": {
+    "strict": [2, "global"],
+    "no-console": 0,
+    "comma-dangle": [2, "never"], // not sure why airbnb turned this on. gross!
+    "max-len": [2, 200, 4],
+    "no-else-return": 0,
+    "new-cap": 0,
+    "react/jsx-no-bind": 0,
+    "prefer-template": 0,
+    "arrow-body-style": 0,
+    "no-nested-ternary": 0,
+    "default-case": 0,
+    "sort-class-members/sort-class-members": [2, {
+      "order": [
+        "[static-properties]",
+        "[static-methods]",
+        "[properties]",
+        "[conventional-private-properties]",
+        "constructor",
+        "[lifecycle]",
+        "render",
+        "/^render.+$/",
+        "[everything-else]"
+      ],
+      "groups": {
+        "lifecycle": [
+          "displayName",
+          "propTypes",
+          "contextTypes",
+          "childContextTypes",
+          "mixins",
+          "statics",
+          "defaultProps",
+          "constructor",
+          "getDefaultProps",
+          "state",
+          "getInitialState",
+          "getChildContext",
+          "componentWillMount",
+          "componentDidMount",
+          "componentWillReceiveProps",
+          "shouldComponentUpdate",
+          "componentWillUpdate",
+          "componentDidUpdate",
+          "componentWillUnmount"
+        ]
+      }
+    }],
+    "react/sort-comp": [0, {
+      order: [
+        'constructor',
+        'lifecycle',
+        'render',
+        '/^render.+$/',
+        'everything-else'
+      ]
+    }]
+  }
+}

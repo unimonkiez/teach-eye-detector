@@ -1,0 +1,71 @@
+{
+  "data": {
+    "maxAttempts": 2,
+    "feedback": {}
+  },
+  "question": {
+    "entry": "150b5d4b-6a08-c51f-d34b-22752330a284",
+    "interactions": {
+      "150b5d4b-6a08-c51f-d34b-22752330a284": {
+        "type": "RICHTEXT",
+        "data": {
+          "children": ["aedddf82-4b8e-e54a-b0fe-0e9d548c48fb", "8381d2b4-73ea-c14c-90f5-706f9ff79f79"]
+        }
+      },
+      "aedddf82-4b8e-e54a-b0fe-0e9d548c48fb": {
+        "type": "TEXT",
+        "data": {
+          "html": "Who was the president of the United States during the War of 1812?"
+        }
+      },
+      "8381d2b4-73ea-c14c-90f5-706f9ff79f79": {
+        "type": "IMAGE",
+        "data": {
+          "showTitle": true,
+          "showCredit": true,
+          "showShadowbox": false,
+          "src": "files/73a68432422b14c024dd02ab2053ecbbc489b537"
+        }
+      }
+    }
+  },
+  "interaction": {
+    "entry": "7c6d46e2-ec25-6098-00ac-5adfdad394e1",
+    "interactions": {
+      "7c6d46e2-ec25-6098-00ac-5adfdad394e1": {
+        "type": "MC",
+        "data": {
+          "mode": "single",
+          "answersType": "Text",
+          "correctAnswersIds": ["b78f7778-49ab-1326-c9ca-aae3cb095146"],
+          "options": ["3666beee-9ed6-2148-830c-a91e1fbacc72", "c2899918-9c39-009c-0d35-33bec8183bc3", "0269f3cb-4fe8-7726-b854-be7bf3270d24", "b78f7778-49ab-1326-c9ca-aae3cb095146"],
+          "showRandomAnswers": false
+        }
+      },
+      "3666beee-9ed6-2148-830c-a91e1fbacc72": {
+        "type": "TEXT",
+        "data": {
+          "html": "Issac Brook"
+        }
+      },
+      "c2899918-9c39-009c-0d35-33bec8183bc3": {
+        "type": "TEXT",
+        "data": {
+          "html": "Andrew Jackson"
+        }
+      },
+      "0269f3cb-4fe8-7726-b854-be7bf3270d24": {
+        "type": "TEXT",
+        "data": {
+          "html": "James Monroe"
+        }
+      },
+      "b78f7778-49ab-1326-c9ca-aae3cb095146": {
+        "type": "TEXT",
+        "data": {
+          "html": "James Madison"
+        }
+      }
+    }
+  }
+}

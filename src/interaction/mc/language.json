@@ -1,0 +1,23 @@
+{
+    "en_us":{
+        "START_TYPING" : "Start typing something...",
+        "SINGLE_ANSWER" : "Single correct answer",
+        "MULTIPLE_ANSWERS" : "Multiple correct answers",
+        "EMPTY_TEXT_MSG" : "Answer is empty",
+        "RANDOMIZE" : "Randomize"
+    },
+    "fr_fr":{
+        "START_TYPING" : "Start typing something in french...",
+        "SINGLE_ANSWER" : "Single correct answer in french...",
+        "MULTIPLE_ANSWERS" : "Multiple correct answers in french...",
+        "EMPTY_TEXT_MSG" : "Answer is empty in french ...",
+        "RANDOMIZE" : "Randomize"
+    },
+    "he_il":{
+        "START_TYPING" : "התחל להקליד כאן...",
+        "SINGLE_ANSWER" : "תשובה אחת נכונה",
+        "MULTIPLE_ANSWERS" : "תשובות מרובות נכונות",
+        "EMPTY_TEXT_MSG": "תשובה ריקה",
+        "RANDOMIZE" : "רנדומלי"
+    }
+}

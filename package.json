@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react-native": "^0.20.0"
+    "react-native": "^0.20.0",
+    "react-native-material-kit": "^0.3.0",
+    "react-native-vector-icons": "^1.2.1"
   }
 }

@@ -1,0 +1,15 @@
+.t2k-image-viewer {
+  position: relative;
+  background-color: white;
+  max-height: 90vh;
+  max-width: 90vw;
+  margin:10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    max-height: 85vh;
+    max-width: 85vw;
+  }
+}

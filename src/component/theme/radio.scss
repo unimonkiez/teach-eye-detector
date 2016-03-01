@@ -1,0 +1,13 @@
+.t2k-radio {
+  font-family: $font-family;
+  font-size: $font-size;
+
+  &.checked:not(.disabled):before {
+    border-color: $primary-color;
+  }
+
+  &.checked:not(.disabled):after {
+    border-color: $primary-color;
+    background-color: $primary-color;
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "data": {
+    "maxAttempts": 2,
+    "feedback": {}
+  },
+  "question": {
+    "entry": "728af67a-4cbc-1bc9-35e3-d60103aa411e",
+    "interactions": {
+      "728af67a-4cbc-1bc9-35e3-d60103aa411e": {
+        "type": "RICHTEXT",
+        "data": {
+          "children": ["046ca695-b674-abac-2c7e-0a2c965c1b27"]
+        }
+      },
+      "046ca695-b674-abac-2c7e-0a2c965c1b27": {
+        "type": "TEXT",
+        "data": {
+          "html": "Answer correct or wrong"
+        }
+      }
+    }
+  },
+  "interaction": {
+    "entry": "dbeb6148-7970-e34c-7748-d1d8fba00149",
+    "interactions": {
+      "dbeb6148-7970-e34c-7748-d1d8fba00149": {
+        "type": "CHOICE_MATRIX",
+        "data": {
+          "columns": ["Correct", "Wrong"],
+          "rows": [{
+            "text": "RAM used for backup",
+            "correctIndex": 1
+          }, {
+            "text": "Jerusalem is the capital of Israel",
+            "correctIndex": 0
+          }, {
+            "text": "Africa is the largest continent",
+            "correctIndex": 1
+          }, {
+            "text": "DNA stands for Domain Name Admin",
+            "correctIndex": 1
+          }]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import '../component/theme';
+.ttk-task {
+  @import '../interaction/theme';
+
+  .ttk-task-player {
+    .progress-bar {
+      .progress-btn {
+        color: $primary-color;
+        &.show-answer {
+          border: 1px solid $primary-color;
+        }
+        &.my-answer {
+          background-color: $primary-color;
+        }
+        &.reset-all {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}

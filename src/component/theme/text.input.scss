@@ -1,0 +1,8 @@
+.t2k-text-input {
+  font-family: $font-family;
+
+  &:focus:not([readonly]) {
+    border-bottom-color: $primary-color;
+    box-shadow: 0 1px 0 0 $primary-color;
+  }
+}

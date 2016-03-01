@@ -1,0 +1,71 @@
+{
+  "data": {
+    "maxAttempts": 2,
+    "feedback": {}
+  },
+  "question": {
+    "entry": "6fcc9692-d4b0-29d5-a93b-50e1f2068738",
+    "interactions": {
+      "6fcc9692-d4b0-29d5-a93b-50e1f2068738": {
+        "type": "RICHTEXT",
+        "data": {
+          "children": ["463556d6-75a9-bc81-e036-e30b859be5d9", "0f9b329f-b038-9934-4269-03adfd698bbc"]
+        }
+      },
+      "463556d6-75a9-bc81-e036-e30b859be5d9": {
+        "type": "TEXT",
+        "data": {
+          "html": "Which one of the following planets is closer to the sun than earth?"
+        }
+      },
+      "0f9b329f-b038-9934-4269-03adfd698bbc": {
+        "type": "IMAGE",
+        "data": {
+          "showTitle": true,
+          "showCredit": true,
+          "showShadowbox": false,
+          "src": "files/5838992928dffebe62699a7e3ddc0052e53df942"
+        }
+      }
+    }
+  },
+  "interaction": {
+    "entry": "47531671-cfc9-c48a-dfa8-cea6ecdcbb5d",
+    "interactions": {
+      "47531671-cfc9-c48a-dfa8-cea6ecdcbb5d": {
+        "type": "MC",
+        "data": {
+          "mode": "single",
+          "answersType": "Text",
+          "correctAnswersIds": ["a3d7affe-91d2-7642-f615-95f8783ec24f"],
+          "options": ["a3d7affe-91d2-7642-f615-95f8783ec24f", "c1d4edbf-45c9-b3c6-e7e2-609109b06431", "72fabde0-677d-7f89-59bf-b05f4450f3b3", "b61e0654-c7c9-6a85-e54a-9f1aa36ea76e"],
+          "showRandomAnswers": false
+        }
+      },
+      "a3d7affe-91d2-7642-f615-95f8783ec24f": {
+        "type": "TEXT",
+        "data": {
+          "html": "Mars"
+        }
+      },
+      "c1d4edbf-45c9-b3c6-e7e2-609109b06431": {
+        "type": "TEXT",
+        "data": {
+          "html": "Venus"
+        }
+      },
+      "72fabde0-677d-7f89-59bf-b05f4450f3b3": {
+        "type": "TEXT",
+        "data": {
+          "html": "Saturn"
+        }
+      },
+      "b61e0654-c7c9-6a85-e54a-9f1aa36ea76e": {
+        "type": "TEXT",
+        "data": {
+          "html": "Jupiter"
+        }
+      }
+    }
+  }
+}

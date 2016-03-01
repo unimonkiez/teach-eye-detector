@@ -1,0 +1,8 @@
+.t2k-checkbox {
+  &>input {
+    &:after {
+      box-shadow: 0 0 0 3px $primary-color;
+      background-color: $primary-color;
+    }
+  }
+}

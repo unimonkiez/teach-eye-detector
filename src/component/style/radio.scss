@@ -1,0 +1,93 @@
+@import "../../core/mixin";
+
+/* Variables */
+$input-bg-color: #fff !default;
+$label-font-size: .8rem !default;
+$input-disabled-color: rgba(0, 0, 0, .26) !default;
+$input-disabled-solid-color: #BDBDBD !default;
+$radio-empty-color: rgba(0, 0, 0, .54) !default;
+
+.t2k-radio {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 1.5em;
+  min-height: 0.875em;
+  line-height: 1.2em;
+  margin-left: 20px;
+
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+
+  &:before, &:after {
+    height: 0.875em;
+    width: 0.875em;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    @include transition(.28s ease);
+    border-radius: 50%;
+    border: 2px solid $radio-empty-color;
+  }
+
+  &:after {
+    z-index: -1;
+    @include transform(scale(0));
+  }
+
+  &.checked {
+    &:before, &:after {
+      border: 2px solid;
+      border-radius: 50%;
+    }
+
+    &:before {
+      border: 2px solid;
+    }
+
+    &:after {
+      z-index: 0;
+      @include transform(scale(.5));
+    }
+  }
+
+  &.disabled {
+    color: $input-disabled-color;
+
+    &:before {
+      background-color: transparent;
+      border-color: $input-disabled-color;
+    }
+
+    &:not(.checked) {
+      &:before {
+        border-color: $input-disabled-color;
+      }
+    }
+
+    &.checked {
+      &:before {
+        border: 2px solid $input-disabled-color;
+      }
+
+      &:after {
+        background-color: $input-disabled-color;
+        border-color: $input-disabled-solid-color;
+      }
+    }
+  }
+
+  > [type="radio"] {
+    /* Remove default Radio Buttons */
+    &:not(:checked),
+    &:checked {
+      position: absolute;
+      left: -9999px;
+      visibility: hidden;
+    }
+  }
+}

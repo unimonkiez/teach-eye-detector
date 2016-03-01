@@ -22,6 +22,8 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.react.uimanager.ViewManager;
+import com.github.xinthink.rnmk.ReactMaterialKitPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,21 +44,25 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModuleName("index.android")
                 .addPackage(new MainReactPackage())
+                .addPackage(new VectorIconsPackage())
+                .addPackage(new ReactMaterialKitPackage())
                 .addPackage(new ReactPackage() {
-                    @Override
-                    public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
-                        List<NativeModule> modules = new ArrayList<>();
-                        modules.add(new ReactNativePackage(reactApplicationContext));
-                        return modules;
-                    }
-                    @Override
-                    public List<Class<? extends JavaScriptModule>> createJSModules() {
-                        return new ArrayList<>();
-                    }
-                    @Override
-                    public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
-                        return new ArrayList<>();
-                    }
+                  @Override
+                  public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
+                    List<NativeModule> modules = new ArrayList<>();
+                    modules.add(new ReactNativePackage(reactApplicationContext));
+                    return modules;
+                  }
+
+                  @Override
+                  public List<Class<? extends JavaScriptModule>> createJSModules() {
+                    return new ArrayList<>();
+                  }
+
+                  @Override
+                  public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
+                    return new ArrayList<>();
+                  }
                 })
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)

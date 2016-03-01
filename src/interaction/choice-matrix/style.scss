@@ -1,0 +1,118 @@
+@mixin taskIcons($content) {
+  font-family: 'Interactions_font' !important;
+  font-size: 22px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  content: $content;
+}
+
+.choice-matrix {
+  .ui-sortable-helper {
+    background-color: white;
+    .drag-picture {
+      border-left: 2px dotted #5F5E5E;
+      border-right: 2px dotted #444;
+      display: flex;
+      flex-flow: row;
+      width: 2px;
+      height: 22px;
+    }
+  }
+  .choice-matrix-column-text {
+    max-width: 200px;
+    text-overflow: ellipsis;
+  }
+  .onlyOnlySmallScreen {
+    display: none;
+  }
+  &-container {
+    display: flex;
+  }
+  table {
+    width: auto;
+    table-layout: fixed;
+
+    thead {
+      th {
+        text-align: center;
+      }
+    }
+    tbody {
+      tr {
+        td {
+          text-align: center;
+        }
+      }
+    }
+    th, td {
+      word-wrap: break-word;
+      //max-width: 150px;
+      max-width: 200px;
+      &:nth-child(1) {
+        //width: 100px;
+      }
+    }
+  }
+  &-row-first {
+    display: flex;
+    align-items: center;
+  }
+  &-delete-td {
+    margin: 0;
+    padding: 0 5px 0 5px !important;
+    width: 0;
+    vertical-align: top !important;
+    background: white;
+    cursor: pointer;
+    span {
+      font-size: 1.5em;
+      color: red;
+      font-weight: bold;
+    }
+  }
+  // text-overflow : ellipsis
+  &-numbering {
+    flex: 0;
+    padding: 0 8px 0 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  &-row-text {
+    flex: 100%;
+    display: inline-block;
+    min-width: 150px;
+  }
+  &-column-text {
+    display: inline-block;
+    min-width: 150px;
+  }
+  &-column-del {
+    font-size: 1.5em;
+    color: red;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &-correct:before {
+    @include taskIcons("\e907");
+    color: #0f0;
+  }
+  &-wrong:before {
+    @include taskIcons("\e908");
+    color: #f00;
+  }
+  &.show {
+    table tr {
+      &:nth-child(odd) {
+        background-color: #FAFAFA;
+      }
+      &:nth-child(even) {
+        background-color: #EDEDED;
+      }
+    }
+  }
+}

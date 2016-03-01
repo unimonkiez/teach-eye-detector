@@ -1,0 +1,266 @@
+/*open sans font*/
+@font-face {
+  font-family: 'Open sans';
+  src: url('../font/openSans/OpenSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-SemiboldItalic.ttf') format('truetype');
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-BoldItalic.ttf') format('truetype');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open sans';
+	src: url('../font/openSans/OpenSans-ExtraBoldItalic.ttf') format('truetype');
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'InteractionsImage';
+	src: url('../font/InteractionsImage.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'TaskIcons';
+	src:url('../font/taskIcons/TaskIcons.eot');
+	src:url('../font/taskIcons/TaskIcons.eot?#iefix') format('embedded-opentype'),
+	url('../font/taskIcons/TaskIcons.ttf') format('truetype'),
+	url('../font/taskIcons/TaskIcons.woff') format('woff'),
+	url('../font/taskIcons/TaskIcons.svg#TaskIcons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'rokkitt';
+	src: url('../font/rokkitt/rokkitt-regular-webfont.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'rokkitt';
+	src: url('../font/rokkitt/rokkitt-bold-webfont.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'montserrat';
+	src: url('../font/montserrat/Montserrat-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'montserrat';
+	src: url('../font/montserrat/Montserrat-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'sra sans';
+    src: url('../font/srasans2.0/srasans2.0-bold.eot');
+    src: url('../font/srasans2.0/srasans2.0-bold.eot?#iefix') format('embedded-opentype'),
+         url('../font/srasans2.0/srasans2.0-bold.woff') format('woff'),
+         url('../font/srasans2.0/srasans2.0-bold.ttf') format('truetype'),
+         url('../font/srasans2.0/srasans2.0-bold.svg#sra_sans_2.0bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sra sans';
+    src: url('../font/srasans2.0/srasans2.0-bolditalic.eot');
+    src: url('../font/srasans2.0/srasans2.0-bolditalic.eot?#iefix') format('embedded-opentype'),
+         url('../font/srasans2.0/srasans2.0-bolditalic.woff') format('woff'),
+         url('../font/srasans2.0/srasans2.0-bolditalic.ttf') format('truetype'),
+         url('../font/srasans2.0/srasans2.0-bolditalic.svg#sra_sans_2.0bold_italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'sra sans';
+    src: url('../font/srasans2.0/srasans2.0-book.eot');
+    src: url('../font/srasans2.0/srasans2.0-book.eot?#iefix') format('embedded-opentype'),
+         url('../font/srasans2.0/srasans2.0-book.woff') format('woff'),
+         url('../font/srasans2.0/srasans2.0-book.ttf') format('truetype'),
+         url('../font/srasans2.0/srasans2.0-book.svg#sra_sans_2.0book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sra sans';
+    src: url('../font/srasans2.0/srasans2.0-italic.eot');
+    src: url('../font/srasans2.0/srasans2.0-italic.eot?#iefix') format('embedded-opentype'),
+         url('../font/srasans2.0/srasans2.0-italic.woff') format('woff'),
+         url('../font/srasans2.0/srasans2.0-italic.ttf') format('truetype'),
+         url('../font/srasans2.0/srasans2.0-italic.svg#sra_sans_2.0italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'armata';
+    src: url('../font/armata/Armata-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'VideoIcons';
+    src:url('../font/videoIcons/VideoIcons.eot');
+    src:url('../font/videoIcons/VideoIcons.eot#iefix') format('embedded-opentype'),
+    url('../font/videoIcons/VideoIcons.ttf') format('truetype'),
+    url('../font/videoIcons/VideoIcons.woff') format('woff'),
+    url('../font/videoIcons/VideoIcons.svg#VideoIcons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Question_Area_Iconfont';
+    src:url('../font/richmediaIcons/Question_Area_Iconfont.eot');
+    src:url('../font/richmediaIcons/Question_Area_Iconfont.eot#iefix') format('embedded-opentype'),
+    url('../font/richmediaIcons/Question_Area_Iconfont.ttf') format('truetype'),
+    url('../font/richmediaIcons/Question_Area_Iconfont.woff') format('woff'),
+    url('../font/richmediaIcons/Question_Area_Iconfont.svg#Question_Area_Iconfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Interactions_font';
+    src:url('../font/icons/Interactions_font.eot');
+    src:url('../font/icons/Interactions_font.eot') format('embedded-opentype'),
+    url('../font/icons/Interactions_font.ttf') format('truetype'),
+    url('../font/icons/Interactions_font.woff') format('woff'),
+    url('../font/icons/Interactions_font.svg#Interactions_font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'Interactions_font' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 26px;
+    cursor: pointer;
+    color: #666666;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-collapse:before {
+    content: "\e900";
+}
+.icon-expand:before {
+    content: "\e901";
+}
+.icon-delete_close:before {
+    content: "\e902";
+}
+.icon-edit:before {
+    content: "\e903";
+}
+.icon-error:before {
+    content: "\e904";
+}
+.icon-oops:before {
+    content: "\e905";
+}
+.icon-parcially_correct:before {
+    content: "\e906";
+}
+.icon-correct:before {
+    content: "\e907";
+}
+.icon-wrong:before {
+    content: "\e908";
+}
+.icon-add_close:before {
+    content: "\e909";
+}
+.icon-add:before {
+    content: "\e90a";
+}
+.icon-video:before {
+    content: "\e90b";
+}
+.icon-audio:before {
+    content: "\e90c";
+}
+.icon-image:before {
+    content: "\e90d";
+}
+.icon-pause:before {
+    content: "\e90e";
+}
+.icon-play:before {
+    content: "\e90f";
+}
+.icon-settings2:before {
+    content: "\e910";
+}
+.icon-settings:before {
+    content: "\e8b8";
+}

@@ -1,0 +1,26 @@
+.t2k-text-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #dfdfdf;
+  border-radius: 0;
+  outline: none;
+  height: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  color: #333333;
+  margin: 1rem 0 0.5rem;
+  padding: 0 0 7px 0;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transition: border-bottom-color .3s;
+
+  &::-webkit-input-placeholder {
+    color: #a3a3a3;
+  }
+
+  &:disabled:not(:focus) {
+    border: 1px dotted #ececec;
+  }
+}

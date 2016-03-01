@@ -1,0 +1,165 @@
+@import "../core/_mixin";
+
+.t2k-image-component {
+  padding-top: 32px;
+  margin: 10px;
+  max-width: calc(100% - 10px);
+  position: relative;
+  width: 100%;
+
+  .component-content-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+  }
+
+  .image-toolbar-outer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 62px;
+    display: none;
+    .image-toolbar-button {
+      height: 30px;
+      width: 30px;
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+      background-color: rgba(102, 102, 102, 0.3);
+      color: white;
+      margin-left: 1px;
+      &:hover {
+        background-color: rgba(102, 102, 102, 0.6);
+      }
+    }
+  }
+
+  .image-toolbar-inner {
+    position: absolute;
+    top: 0;
+    right: 62px;
+    display: none;
+    .image-toolbar-button {
+      height: 45px;
+      width: 45px;
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+      background-color: rgba(102, 102, 102, 0.3);
+      color: white;
+      margin-left: 1px;
+      &:hover {
+        background-color: rgba(102, 102, 102, 0.6);
+      }
+    }
+  }
+
+  &:hover {
+    .image-toolbar-inner {
+      @include flexbox;
+    }
+    .image-toolbar-outer {
+      @include flexbox;
+    }
+  }
+
+  &.image-edit {
+
+    .error-wrapper {
+      height: 100%;
+      max-height: 200px;
+      border: 1px solid #9e9e9e;
+      text-align: center;
+      width: 1800px;
+      max-width: 100%;
+      .icon-error {
+        font-size: 28px;
+        color: #333333;
+        vertical-align: middle;
+      }
+      .icon-oops {
+        font-size: 32px;
+        color: #333333;
+        vertical-align: middle;
+      }
+      .error-message {
+        display: inline-block;
+        margin: 90px 0 90px 1em;
+      }
+      .error-action {
+        text-decoration: underline;
+        margin-left: 0.3em;
+        cursor: pointer;
+      }
+    }
+    .dropzone-wrapper, .loader-wrapper {
+      position: relative;
+      border: 1px solid #9e9e9e;
+      height: 160px;
+    }
+	}
+
+	&.image-play {
+		display: flex;
+	}
+
+	// Media wrapper wraps a media.
+	// On pc - MediaWrapper is used twice - once inside a document flow, and once in shadowbox pan zoom.
+	// On mobile - MediaWrapper us used only inside a document flow
+	.media-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		overflow-y: hidden;
+		// content-wrapper wraps the image.
+		.content-wrapper {
+			overflow-y: hidden;
+			// It uses flex mode that shrinks it to fit the viewport, while keeping the footer constant
+			flex: 1 1 auto;
+            min-height: 100px;
+			.image-trigger-wrapper{
+				display:inline-block;
+				position:relative;
+        padding-right: 62px;
+			}
+
+			// content is the actual image
+			.content {
+				// If the image is displayed in document flow, fit it to available width.
+				&.fit-viewport {
+					max-width: 100%;
+				}
+			}
+		}
+
+		// Footer contains image credit and image title
+		.footer {
+			flex: 0 0 auto;
+			// General settings for credit and title
+			div {
+				margin: 0 8px 0 0;
+				max-width: 560px;
+				display: inline;
+			}
+			// title font
+			.title {
+				font-size: 16px;
+				color: #333333;
+			}
+			// credit font
+			.credit {
+				font-size: 12px;
+				color: #999999;
+			}
+		}
+		// This is the enlarge button colors and hover color
+		.shadow-box-trigger {
+			background-color: rgba(102,102,102,0.3);
+			color: white;
+			&:hover {
+				background-color: rgba(102,102,102,0.6);
+			}
+		}
+	}
+}

@@ -1,0 +1,59 @@
+@import '../core/mixin';
+
+.t2k-button {
+  position: relative;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  margin: 0 8px;
+  color: #333;
+  background-color: transparent;
+  transition: background-color .3s;
+  cursor: pointer;
+  min-width: 4rem;
+
+  &.pressed {
+    background-color: rgba(#999, 0.8);
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      background-color: rgba(#999, 0.8);
+    }
+
+
+
+    &>span {
+      position: relative;
+      display: block;
+      padding: 8px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 0;
+      padding-top: 0;
+      border-radius: 100%;
+      background-color: rgba(236, 240, 241, .3);
+      @include transform(translate(-50%, -50%));
+    }
+
+    &:active {
+      background-color: rgba(#000, 0.6);
+      &:before {
+        width: 120%;
+        padding-top: 120%;
+        transition: width .2s ease-out, padding-top .2s ease-out;
+      }
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+    color: rgba(0,0,0,0.26);
+  }
+}

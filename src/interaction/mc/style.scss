@@ -1,0 +1,188 @@
+@mixin taskIcons($content) {
+  font-family: 'Interactions_font' !important;
+  font-size: 22px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  content: $content;
+}
+
+.t2k-mc-component {
+  &.mc-player {
+    background-color: #FFFFFF;
+    font-family: Open Sans;
+    margin-left: 32px;
+    margin-bottom: 18px;
+
+    .mc-option {
+      display: flex !important;
+      flex-flow: row;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 500;
+      margin-bottom: 0.8em;
+      min-height: 30px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      padding-top: 5px;
+      padding-left: 10px;
+      transition: color 0.28s ease;
+      &.mc-correct .opt-button-container:before {
+        @include taskIcons("\e907");
+        color: #0f0;
+      }
+      &.mc-wrong .opt-button-container:before {
+        @include taskIcons("\e908");
+        color: #f00;
+      }
+      &.mc-semi-correct .opt-button-container:before {
+        @include taskIcons("\e906");
+      }
+      .mc-input {
+        min-width: 35px;
+        align-items: center;
+        display: flex;
+        p {
+          margin: 0;
+          padding-right: 0;
+          position: relative;
+          top: -3px;
+        }
+      }
+      .text-component {
+        padding-top: 2px;
+      }
+    }
+  }
+
+  &.mc-edit {
+    display: flex;
+    flex-direction: column;
+    .options-manager {
+      .options-container,
+      .adders {
+        .inner {
+          padding: 30px 0;
+        }
+      }
+    }
+    .adders {
+      .drag-handle {
+        cursor: default !important;
+      }
+      .opt-content-text {
+        pointer-events: none !important;
+      }
+      .opt-button-container {
+        font-size: 30px;
+      }
+      cursor: pointer;
+      .adder-text-outer {
+        position: relative;
+        flex: 1;
+        min-height: 50px;
+        .adder-text-mask {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: 1000;
+          cursor: text;
+        }
+      }
+    }
+    .settings {
+      display: flex;
+      justify-content: flex-end;
+      label {
+        display: inline-block;
+        padding-top: 5px;
+        height: 25px;
+      }
+    }
+  }
+
+  .mc-option {
+    &-content {
+      flex: 1 1;
+      p.fr-tag {
+        margin: 1em 0;
+      }
+    }
+    &.ui-sortable-helper {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+    display: flex;
+    flex-flow: row;
+    & > .text-component {
+      flex: 1;
+      min-height: 50px;
+    }
+    &:hover:not(.ui-sortable-helper) {
+      .delete.delete-enabled{
+        visibility: visible;
+        cursor: pointer;
+      }
+    }
+    .delete {
+      font-size: 28px;
+      visibility: hidden;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      & .btn-flat {
+        color: red;
+        padding: 0 13px;
+      }
+    }
+    .drag-handle {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-flow: row;
+      width: 44px;
+      cursor: move;
+      .drag-picture {
+        visibility: hidden;
+        border-left: 2px dotted #5F5E5E;
+        border-right: 2px dotted #444;
+        display: flex;
+        flex-flow: row;
+        width: 2px;
+        height: 22px;
+      }
+    }
+    .opt-button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+
+      flex-flow: row;
+      width: 44px;
+      [type="radio"] + label:before,
+      [type="radio"] + label:after {
+        transition: 0.28s ease, border-radius 0.30s !important;
+        .touch & {
+          transition: none !important;
+        }
+      }
+      [type="checkbox"] + label:before,
+      [type="checkbox"] + label:after {
+        transition: border 0.25s, background-color 0.25s, width 0.2s 0.1s, height 0.2s 0.1s, left 0.2s 0.1s, border-radius 0.30s !important;
+        .touch & {
+          transition: none !important;
+        }
+      }
+    }
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

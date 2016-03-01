@@ -1,0 +1,12 @@
+.t2k-video-component {
+  &.video-edit {
+    .file-selector-wrapper {
+      li {
+        &.selected {
+          border-bottom-color: $primary-color;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
