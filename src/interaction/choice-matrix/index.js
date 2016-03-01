@@ -5,6 +5,13 @@ const styles = React.StyleSheet.create({
   row: {
     flexDirection: 'row',
     justifyContent: 'flex-end'
+  },
+  rowText: {
+    textAlign: 'left'
+  },
+  cell: {
+    paddingLeft: 10,
+    paddingRight: 10
   }
 });
 
@@ -15,7 +22,7 @@ export default class ChoiceMatrix extends Component {
       <View>
         <View style={styles.row}>
           { this.props.model.data.columns.map((column, columnIndex) => (
-            <View key={columnIndex}>
+            <View key={columnIndex} style={styles.cell}>
               <Text>
                 { column }
               </Text>
@@ -25,12 +32,12 @@ export default class ChoiceMatrix extends Component {
       { this.props.model.data.rows.map((row, rowIndex) => (
         <View key={rowIndex} style={styles.row}>
           <View>
-            <Text>
+            <Text style={styles.rowText}>
               { row.text }
             </Text>
           </View>
           { this.props.model.data.columns.map((column, columnIndex) => (
-              <View key={columnIndex}>
+              <View key={columnIndex} style={styles.cell}>
                 <MKRadioButton
                   group={this.radioGroups[rowIndex]}
                 />
