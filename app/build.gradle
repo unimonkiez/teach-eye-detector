@@ -2,14 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.detector.eye.teach.teacheyedetector"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -20,9 +21,14 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.facebook.react:react-native:0.20.1'
-    compile project(':react-native-vector-icons')
-    compile project(':RNMaterialKit')
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  //testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:23.1.1'
+  compile 'com.facebook.react:react-native:0.20.1'
+  compile project(':react-native-vector-icons')
+  compile project(':RNMaterialKit')
+  compile project(':openCVLibrary310')
+  compile 'com.google.android.gms:play-services:8.4.0'
+  compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+
 }

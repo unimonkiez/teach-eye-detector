@@ -3,3 +3,4 @@ include ':react-native-vector-icons'
 include ':RNMaterialKit'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, './node_modules/react-native-vector-icons/android')
 project(':RNMaterialKit').projectDir = file('./node_modules/react-native-material-kit/android')
+include ':openCVLibrary310'
