@@ -11,7 +11,7 @@ class MyAwesomeApp extends Component {
   state = {
     name: undefined,
     results: {},
-    step: QUIZ
+    step: START
   };
   render() {
     let component
@@ -41,7 +41,7 @@ class MyAwesomeApp extends Component {
   handleDone = results => {
     this.setState({
       results,
-      step: RESULT
+      step: START
     }, () => {
       NativeModules.ReactNativePackage.done();
     });

@@ -7,16 +7,21 @@ android {
     defaultConfig {
         applicationId "com.detector.eye.teach.teacheyedetector"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    dexOptions {
+       preDexLibraries = false
+       javaMaxHeapSize "4g"
     }
 }
 
@@ -30,5 +35,6 @@ dependencies {
   compile project(':openCVLibrary310')
   compile 'com.google.android.gms:play-services:8.4.0'
   compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+  compile 'com.google.code.gson:gson:2.2.4'
 
 }

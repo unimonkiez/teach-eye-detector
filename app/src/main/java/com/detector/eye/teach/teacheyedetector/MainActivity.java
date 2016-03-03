@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
                   @Override
                   public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
                     List<NativeModule> modules = new ArrayList<>();
-                    modules.add(new ReactNativePackage(reactApplicationContext));
+                    modules.add(new ReactNativePackage(null,reactApplicationContext));
                     return modules;
                   }
 

@@ -142,6 +142,7 @@
     <orderEntry type="library" exported="" name="stetho-okhttp-1.2.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-gcm-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-panorama-8.4.0" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="play-services-appindexing-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-plus-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="jsr305-3.0.0" level="project" />
